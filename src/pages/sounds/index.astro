@@ -1,0 +1,13 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+const entries = Object.entries(import.meta.glob("../../content/work/*.md", { eager: true }))
+  .map(([path, mod]) => ({ slug: path.split("/").pop().replace(/\.md$/, ""), ...mod.frontmatter }))
+  .filter((item) => item.category === "sounds" && item.status !== "draft")
+  .sort((a,b) => String(b.date || "").localeCompare(String(a.date || "")));
+---
+<SiteLayout title="Sounds — ScribbledToday" description="Handpan, music, sound baths and shared listening experiences.">
+  <main><div class="page-hero"><div class="eyebrow">02 / Listen</div><h1>Some things are better <em>felt.</em></h1><p>A space for handpan, music, Poetry with Pan and sound journeys — melodies and moments that invite us to pause and listen.</p></div>
+  <section class="section"><div class="eyebrow">Music & sound journeys</div><h2 class="section-title">From the sound space</h2>
+  {entries.length ? <div class="card-grid">{entries.map((entry) => <a class="work-card" href={`/work/${entry.slug}/`}><div class="card-meta"><span>{entry.date || "Sound"}</span><span>↗</span></div><div><h2>{entry.title}</h2><p>{entry.excerpt || "A sound experience from ScribbledToday."}</p></div></a>)}</div> : <div class="empty-note">The next melody is waiting to be added. Performances, handpan explorations and sound sessions will appear here.</div>}</section>
+  <section class="section"><div class="split"><div><div class="eyebrow">A note on sessions</div><h2 class="section-title">Make room to listen.</h2><p class="muted">For organisers interested in a handpan performance, a sound bath or a group experience, visit the collaboration page to start a conversation.</p><a class="btn primary" href="/work-with-me/">Enquire about a session</a></div><div class="feature-panel"><strong>A moment to pause.<br/><em>A space to hear.</em></strong></div></div></section></main>
+</SiteLayout>
