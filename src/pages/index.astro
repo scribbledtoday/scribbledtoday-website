@@ -1,22 +1,27 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
-const instagram = "https://www.instagram.com/scribbledtoday/";
-const spotify = "https://open.spotify.com/artist/2sVzgMo3fdQtfZr5mEe3z4";
-const substack = "https://scribbledtoday.substack.com/";
+import site from "../data/site.json";
+const instagram = site.instagram;
+const spotify = site.spotify;
+const substack = site.substack;
 ---
 <SiteLayout title="ScribbledToday — Words, Sounds & Stories" description="A creative personal space and artist portfolio for poetry, writing, handpan, performances, storytelling and collaborations.">
   <main>
     <section class="home-hero">
       <div class="hero-copy">
-        <div class="eyebrow">A creative space · An artist portfolio</div>
-        <h1>Some things are too alive to stay <em>inside.</em></h1>
-        <p>Words, sounds, stories and the moments in between. A home for what I create — and a space to create something together.</p>
+        <div class="eyebrow">{site.home_eyebrow}</div>
+        <h1>{site.home_headline}</h1>
+        <p>{site.home_intro}</p>
         <div class="hero-actions"><a class="btn primary" href="#explore">Explore my work</a><a class="btn" href="/work-with-me/">Work with me</a></div>
       </div>
       <div class="hero-art" aria-label="Abstract artwork representing creative expression">
         <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
         <div class="hero-art-note"><span>scribbled today</span><strong>A little of life.<br/><em>A lot of expression.</em></strong><small>WORDS · SOUNDS · STORIES</small></div>
       </div>
+    </section>
+    <section class="home-section about-home">
+      <div class="about-copy"><div class="eyebrow">Beyond the work</div><h2>{site.bio_heading}</h2><p>{site.bio_text}</p></div>
+      {site.profile_image && <div class="about-photo"><img src={site.profile_image} alt="Portrait" /></div>}
     </section>
     <section id="explore" class="home-section">
       <div class="section-heading"><div><div class="eyebrow">The many ways I express</div><h2>Explore the scribbles.</h2></div><p>Different forms, one curiosity: to create, experience and share.</p></div>
@@ -41,6 +46,7 @@ const substack = "https://scribbledtoday.substack.com/";
   </main>
 </SiteLayout>
 <style>
+.about-home{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.7fr);gap:48px;align-items:center}.about-copy h2{font:500 clamp(42px,5.5vw,64px)/.98 'Cormorant Garamond',serif;margin:10px 0 18px}.about-copy p{color:var(--muted);font-size:15px;line-height:1.9;max-width:700px;white-space:pre-line}.about-photo{max-width:360px;justify-self:end}.about-photo img{display:block;width:100%;max-height:420px;object-fit:cover;border-radius:46% 46% 4px 4px / 28% 28% 4px 4px;border:1px solid rgba(216,168,117,.28)}
 .home-hero{padding:112px 0 105px;display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center}
 .hero-copy{position:relative;z-index:1}.hero-copy h1{font:500 clamp(58px,8vw,104px)/.91 'Cormorant Garamond',serif;letter-spacing:-.045em;margin:24px 0 26px;max-width:680px}.hero-copy h1 em,.enquiry-home h2 em{font-family:'Caveat',cursive;color:var(--accent);font-size:1.12em;font-weight:400;letter-spacing:0}.hero-copy p{max-width:500px;color:var(--muted);font-size:16px;line-height:1.9}.hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:32px}
 .hero-art{min-height:455px;position:relative;overflow:hidden;border:1px solid rgba(216,168,117,.22);border-radius:48% 48% 5px 5px / 38% 38% 5px 5px;background:radial-gradient(ellipse at 48% 38%,rgba(216,168,117,.29),transparent 36%),radial-gradient(ellipse at 72% 75%,rgba(114,91,69,.28),transparent 45%),linear-gradient(145deg,#37352e,#1a1a17 74%);display:flex;align-items:end;padding:38px;box-shadow:inset 0 0 80px rgba(0,0,0,.22)}
@@ -55,5 +61,5 @@ const substack = "https://scribbledtoday.substack.com/";
 .split-home{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.text-link{display:inline-block;margin-top:18px;color:var(--accent);font-size:12px}.quote-panel{min-height:290px;background:radial-gradient(ellipse at 85% 20%,rgba(216,168,117,.13),transparent 48%),linear-gradient(145deg,#34342d,#1d1d19);border:1px solid var(--line);border-radius:46% 4px 46% 4px / 12% 4px 12% 4px;padding:42px;display:flex;flex-direction:column;justify-content:end}.quote-panel span{color:var(--accent);font-size:10px;letter-spacing:.18em}.quote-panel strong{font:500 34px/1.15 'Cormorant Garamond',serif;margin-top:20px}.quote-panel em{font-family:'Caveat',cursive;color:var(--accent);font-size:1.12em;font-weight:400}
 .enquiry-home{padding:48px;background:linear-gradient(130deg,rgba(44,42,35,.96),rgba(30,30,26,.96));border:1px solid var(--line);border-radius:4px 54px 4px 54px;display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center;position:relative;overflow:hidden}.enquiry-home:after{content:"";position:absolute;width:260px;height:260px;border:1px solid rgba(216,168,117,.12);border-radius:50%;right:-110px;top:-125px;box-shadow:0 0 0 24px rgba(216,168,117,.025),0 0 0 48px rgba(216,168,117,.02);pointer-events:none}.enquiry-home h2{font:500 clamp(42px,5vw,60px)/.98 'Cormorant Garamond',serif;margin:14px 0}.enquiry-home p{color:var(--muted);max-width:470px;font-size:14px}.enquiry-home .btn{margin-top:16px}.enquiry-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;position:relative;z-index:1}.enquiry-points div{padding:17px 15px;border:1px solid var(--line);border-radius:2px 18px 2px 18px;font-size:12px;background:rgba(15,15,13,.16)}.enquiry-points span{display:block;color:var(--accent);font-size:9px;letter-spacing:.12em;margin-bottom:6px}
 .home-bottom{padding:72px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:30px;align-items:center}.home-bottom h2{margin-bottom:0}.bottom-links{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--accent)}
-@media(max-width:760px){.home-hero{grid-template-columns:1fr;padding:68px 0;gap:32px}.hero-copy h1{font-size:clamp(58px,15vw,82px)}.hero-art{min-height:340px;width:100%;border-radius:45% 45% 4px 4px / 28% 28% 4px 4px}.home-grid,.split-home,.enquiry-home{grid-template-columns:1fr}.section-heading,.home-bottom{align-items:flex-start;flex-direction:column}.home-section{padding:58px 0}.enquiry-home{padding:28px 24px;border-radius:4px 34px 4px 34px}.enquiry-points{grid-template-columns:1fr 1fr}.home-tile{min-height:220px}}
+@media(max-width:760px){.home-hero{grid-template-columns:1fr;padding:68px 0;gap:32px}.hero-copy h1{font-size:clamp(58px,15vw,82px)}.hero-art{min-height:340px;width:100%;border-radius:45% 45% 4px 4px / 28% 28% 4px 4px}.home-grid,.split-home,.enquiry-home,.about-home{grid-template-columns:1fr}.about-photo{justify-self:start;width:min(100%,320px)}.section-heading,.home-bottom{align-items:flex-start;flex-direction:column}.home-section{padding:58px 0}.enquiry-home{padding:28px 24px;border-radius:4px 34px 4px 34px}.enquiry-points{grid-template-columns:1fr 1fr}.home-tile{min-height:220px}}
 </style>
