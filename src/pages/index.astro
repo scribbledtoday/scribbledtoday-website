@@ -1,0 +1,77 @@
+---
+const instagram = "https://www.instagram.com/scribbledtoday/";
+const sections = [
+  { number: "01", title: "Words", subtitle: "Poetry · Essays · Reflections", copy: "Thoughts that found their way onto a page. In Hindi, in English, and sometimes somewhere in between." },
+  { number: "02", title: "Sounds", subtitle: "Handpan · Music · Sound journeys", copy: "Melodies, musical explorations and spaces to pause, listen and feel." },
+  { number: "03", title: "Stories", subtitle: "Theatre · Acting · Storytelling", copy: "Stories brought to life — on a stage, in a room, or around a shared moment." },
+  { number: "04", title: "Moments", subtitle: "Experiences · Photographs · Notes", copy: "Small fragments of life that stayed a little longer." }
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="ScribbledToday — a creative space and artist portfolio for words, sounds, stories and shared experiences." />
+    <meta name="theme-color" content="#171714" />
+    <title>ScribbledToday — Words, Sounds & Stories</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet" />
+    <style is:global>
+      :root{color-scheme:dark;--bg:#171714;--panel:#22221e;--ink:#f2eee5;--muted:#aaa69b;--accent:#d8a875;--line:rgba(242,238,229,.15)}
+      *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 48px));margin:auto}
+      header{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{font-size:19px;letter-spacing:.13em;font-weight:700}.brand span{color:var(--accent)}nav{display:flex;gap:28px;color:var(--muted);font-size:13px}nav a:hover,.text-link:hover{color:var(--accent)}
+      .eyebrow{color:var(--accent);font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:600}.hero{padding:112px 0 100px;display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}.hero h1{font-family:'Playfair Display',serif;font-size:clamp(48px,7vw,88px);line-height:1.04;letter-spacing:-.04em;font-weight:500;margin:22px 0}.hero h1 em{color:var(--accent);font-weight:500}.hero p{max-width:510px;color:var(--muted);font-size:17px}.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}.btn{display:inline-flex;padding:13px 20px;border:1px solid var(--accent);font-size:12px;letter-spacing:.06em;text-transform:uppercase}.btn.primary{background:var(--accent);color:#211b15}.btn:hover{transform:translateY(-2px)}.hero-art{min-height:390px;border:1px solid var(--line);background:radial-gradient(ellipse at 65% 35%,rgba(216,168,117,.23),transparent 42%),linear-gradient(145deg,#34342d,#1c1c19 70%);display:flex;align-items:end;padding:30px;position:relative;overflow:hidden}.hero-art:before{content:"";position:absolute;width:270px;height:270px;border:1px solid rgba(216,168,117,.4);border-radius:50%;right:-35px;top:28px}.hero-art:after{content:"";position:absolute;width:190px;height:190px;border:1px solid rgba(216,168,117,.25);border-radius:50%;right:5px;top:68px}.art-note{position:relative;z-index:1;font-family:'Playfair Display',serif;font-size:30px;line-height:1.2;max-width:240px}.art-note em{color:var(--accent)}
+      section{padding:82px 0;border-top:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:36px}.section-head h2{font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,52px);font-weight:500;margin:8px 0 0}.section-head p{color:var(--muted);max-width:390px;margin:0}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.tile{background:var(--panel);padding:30px;min-height:225px;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;transition:border-color .2s,transform .2s}.tile:hover{border-color:var(--accent);transform:translateY(-3px)}.tile-top{display:flex;justify-content:space-between;color:var(--accent);font-size:11px;letter-spacing:.14em}.tile h3{font:500 34px 'Playfair Display',serif;margin:22px 0 4px}.tile p{color:var(--muted);margin:0;font-size:14px}.tile .sub{color:var(--accent);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+      .work-band{background:#24231f;padding:58px;border:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}.work-band h2{font:500 clamp(32px,4vw,48px)/1.1 'Playfair Display',serif;margin:10px 0}.work-band p{color:var(--muted);font-size:14px}.opportunities{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.opportunity{padding:16px;border:1px solid var(--line);font-size:13px}.opportunity span{display:block;color:var(--accent);font-size:10px;letter-spacing:.13em;text-transform:uppercase;margin-bottom:5px}
+      .about{display:grid;grid-template-columns:.7fr 1.3fr;gap:60px}.about h2{font:500 42px 'Playfair Display',serif;margin:8px 0}.about p{color:var(--muted);max-width:680px}.contact{display:flex;justify-content:space-between;align-items:center;gap:24px}.contact h2{font:500 clamp(34px,5vw,54px) 'Playfair Display',serif;margin:8px 0}.contact p{color:var(--muted)}footer{padding:26px 0;color:var(--muted);font-size:11px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:18px}
+      @media(max-width:760px){.wrap{width:min(100% - 32px,560px)}header{height:auto;padding:20px 0;align-items:flex-start;gap:16px;flex-direction:column}nav{gap:16px;flex-wrap:wrap}.hero{padding:72px 0;grid-template-columns:1fr;gap:30px}.hero-art{min-height:260px}.section-head,.contact{align-items:flex-start;flex-direction:column}.grid,.work-band,.about{grid-template-columns:1fr}.work-band{padding:28px}.about{gap:12px}section{padding:62px 0}footer{flex-direction:column}}
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <a class="brand" href="#top">SCRIBBLED<span>TODAY</span></a>
+        <nav aria-label="Main navigation">
+          <a href="#explore">Explore</a><a href="#work">Work with me</a><a href="#about">About</a><a href="#connect">Connect</a>
+        </nav>
+      </header>
+      <main id="top">
+        <div class="hero">
+          <div>
+            <div class="eyebrow">A creative space · An artist portfolio</div>
+            <h1>Some things are too alive to stay <em>inside.</em></h1>
+            <p>Words, sounds, stories and the moments in between. A home for what I create — and a space to create something together.</p>
+            <div class="actions"><a class="btn primary" href="#explore">Explore my work</a><a class="btn" href="#connect">Start a conversation</a></div>
+          </div>
+          <div class="hero-art" aria-label="Abstract warm-toned artwork placeholder"><div class="art-note">A little of life.<br/><em>A lot of expression.</em></div></div>
+        </div>
+        <section id="explore">
+          <div class="section-head"><div><div class="eyebrow">The many ways I express</div><h2>Explore the scribbles.</h2></div><p>Different forms, one curiosity: to create, experience and share.</p></div>
+          <div class="grid">
+            {sections.map((item) => <a class="tile" href="#connect"><div class="tile-top"><span>{item.number}</span><span>↗</span></div><div><div class="sub">{item.subtitle}</div><h3>{item.title}</h3><p>{item.copy}</p></div></a>)}
+          </div>
+        </section>
+        <section id="work">
+          <div class="work-band">
+            <div><div class="eyebrow">For organisers & collaborators</div><h2>Have an idea?<br/><em>Let's make it happen.</em></h2><p>Open to conversations around commissioned creative work, performances, workshops and sessions. Tell me what you're imagining.</p><a class="btn primary" href={instagram} target="_blank" rel="noreferrer">Enquire via Instagram ↗</a></div>
+            <div class="opportunities">
+              <div class="opportunity"><span>01 / Create</span>Commissioned writing & creative projects</div>
+              <div class="opportunity"><span>02 / Perform</span>Handpan, poetry and performance opportunities</div>
+              <div class="opportunity"><span>03 / Facilitate</span>Sound experiences and group sessions</div>
+              <div class="opportunity"><span>04 / Collaborate</span>Events, festivals and creative partnerships</div>
+            </div>
+          </div>
+        </section>
+        <section id="about">
+          <div class="about"><div><div class="eyebrow">Behind the scribbles</div><h2>A person.<br/>Many ways to create.</h2></div><div><p>ScribbledToday brings together the things I love making and sharing — writing, poetry, music, performance and stories. It is both a personal creative space and a portfolio of work, experiences and collaborations.</p><p>This space will keep growing as new work finds its way here.</p></div></div>
+        </section>
+        <section id="connect">
+          <div class="contact"><div><div class="eyebrow">Something in mind?</div><h2>Let's create a moment.</h2><p>For commissioned work, performances, sessions or collaborations, reach out.</p></div><a class="btn primary" href={instagram} target="_blank" rel="noreferrer">Connect on Instagram ↗</a></div>
+        </section>
+      </main>
+      <footer><span>© {new Date().getFullYear()} ScribbledToday</span><span>Words · Sounds · Stories · Moments</span><a href={instagram} target="_blank" rel="noreferrer">Instagram ↗</a></footer>
+    </div>
+  </body>
+</html>
