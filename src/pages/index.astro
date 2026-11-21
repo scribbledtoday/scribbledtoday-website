@@ -20,15 +20,16 @@ const substack = site.substack;
       </div>
     </section>
     <div class="poetry-thread"><span class="thread-mark">✳</span><p>A word becomes a poem. A breath becomes a melody. A moment becomes a story.</p><span class="thread-mark">✳</span></div>
+
+    <section class="home-section about-home">
+      <div class="about-copy"><div class="eyebrow">Beyond the work</div><h2>{site.bio_heading}</h2><p>{site.bio_text}</p></div>
+      {site.profile_image && <div class="about-photo"><img src={site.profile_image} alt="Portrait" /></div>}
+    </section>
     <section class="featured-poem" aria-labelledby="featured-poem-title">
       <div class="poem-kicker">A few lines from my notebook · Hindi poetry</div>
       <h2 id="featured-poem-title" lang="hi">उसने कहा तुमसे न हो पाएगा,<br/>और लौट के वापस यहीं आएगा।</h2>
       <p lang="hi">मैं मुस्कुराया, और बढ़ चला आगे,<br/>पर न किसी को बताने, और न उसे जताने।</p>
       <span class="poem-flourish" aria-hidden="true">✳</span>
-    </section>
-    <section class="home-section about-home">
-      <div class="about-copy"><div class="eyebrow">Beyond the work</div><h2>{site.bio_heading}</h2><p>{site.bio_text}</p></div>
-      {site.profile_image && <div class="about-photo"><img src={site.profile_image} alt="Portrait" /></div>}
     </section>
     <section id="explore" class="home-section">
       <div class="section-heading"><div><div class="eyebrow">The many ways I express</div><h2>Explore the scribbles.</h2></div><p>Different forms, one curiosity: to create, experience and share.</p></div>
@@ -61,7 +62,7 @@ const substack = site.substack;
 .hero-art:after{content:"";position:absolute;width:45%;height:58%;right:10%;top:12%;border:1px solid rgba(224,190,151,.2);border-radius:48% 52% 35% 65% / 60% 38% 62% 40%;transform:rotate(27deg)}
 .orbit{position:absolute;border:1px solid rgba(216,168,117,.28);border-radius:50%;width:250px;height:250px;right:-70px;top:70px;transform:rotate(35deg)}.orbit-two{width:170px;height:170px;right:10px;top:115px;border-color:rgba(216,168,117,.18)}
 .hero-art-note{position:relative;z-index:1}.hero-art-note span,.hero-art-note small{display:block;color:var(--accent);font-size:10px;letter-spacing:.2em;text-transform:uppercase}.hero-art-note strong{display:block;font:500 42px/1.02 'Cormorant Garamond',serif;margin:17px 0 23px}.hero-art-note em{font-family:'Caveat',cursive;color:var(--accent);font-size:1.15em;font-weight:400}
-.featured-poem{position:relative;text-align:center;padding:76px 24px 82px;margin:0 auto;max-width:900px;border-top:1px solid rgba(216,168,117,.14);border-bottom:1px solid rgba(216,168,117,.14);overflow:hidden}.poem-kicker{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:28px}.featured-poem h2,.featured-poem p{font-family:'Noto Serif Devanagari','Cormorant Garamond',serif;font-weight:400;line-height:1.9;letter-spacing:0}.featured-poem h2{font-size:clamp(25px,3.5vw,39px);margin:0 0 14px;color:var(--ink)}.featured-poem p{font-size:clamp(22px,3vw,31px);margin:0;color:#d8c9b5}.poem-flourish{display:block;color:var(--accent);font-size:15px;margin-top:26px;opacity:.75}
+.featured-poem{position:relative;text-align:center;padding:76px 24px 82px;margin:0 auto;max-width:900px;border-top:1px solid rgba(216,168,117,.14);border-bottom:1px solid rgba(216,168,117,.14);overflow:hidden}.poem-kicker{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:28px}.featured-poem h2,.featured-poem p{font-family:'Noto Serif Devanagari',serif;font-size:clamp(20px,2.5vw,27px);font-weight:400;line-height:1.85;letter-spacing:0;margin:0;color:var(--ink)}.featured-poem h2{margin:0 0 10px}.featured-poem p{color:var(--ink)}.poem-flourish{display:block;color:var(--accent);font-size:15px;margin-top:26px;opacity:.75}
 .home-section{padding:86px 0;border-top:1px solid var(--line);position:relative}.poetry-thread{display:flex;align-items:center;justify-content:center;gap:22px;padding:26px 12px 42px;text-align:center;color:var(--accent);border-top:1px solid rgba(216,168,117,.12)}.poetry-thread p{font:400 clamp(23px,3vw,34px)/1.15 Caveat,cursive;margin:0;max-width:760px}.thread-mark{font-size:13px;opacity:.65}.hero-whisper{font:400 22px/1.12 Caveat,cursive;color:rgba(242,238,229,.78);margin:23px 0 0;letter-spacing:.02em}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:38px}.section-heading h2,.split-home h2,.home-bottom h2{font:500 clamp(42px,5.5vw,64px)/.98 'Cormorant Garamond',serif;margin:10px 0}.section-heading p,.home-muted,.home-bottom p{color:var(--muted);max-width:400px}.home-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 .home-tile{min-height:250px;position:relative;padding:30px;background:linear-gradient(135deg,rgba(45,42,35,.92),rgba(29,29,25,.95));border:1px solid rgba(216,168,117,.16);border-radius:3px 42px 3px 42px;display:flex;flex-direction:column;justify-content:end;overflow:hidden;transition:transform .35s,border-color .35s}.home-tile:nth-child(2),.home-tile:nth-child(3){border-radius:42px 3px 42px 3px}
 .home-tile:before{content:"";position:absolute;width:220px;height:220px;border:1px solid rgba(216,168,117,.2);border-radius:44% 56% 62% 38% / 52% 40% 60% 48%;right:-62px;top:-90px;transform:rotate(28deg);transition:transform .5s}.home-tile:after{content:"";position:absolute;width:150px;height:150px;border:1px solid rgba(216,168,117,.12);border-radius:50%;right:-26px;top:-54px}.home-tile:hover{border-color:var(--accent);transform:translateY(-5px);color:var(--ink)}.home-tile:hover:before{transform:rotate(65deg) scale(1.08)}
