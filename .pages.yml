@@ -51,3 +51,40 @@ content:
       - name: body
         label: Full content
         type: rich-text
+
+  - name: site
+    label: Website text & links
+    type: file
+    path: src/data/site.json
+    format: json
+    fields:
+      - name: tagline
+        label: Brand tagline
+        type: string
+      - name: home_eyebrow
+        label: Homepage small heading
+        type: string
+      - name: home_headline
+        label: Homepage main heading
+        type: string
+      - name: home_intro
+        label: Homepage introduction
+        type: text
+      - name: bio_heading
+        label: About section heading
+        type: string
+      - name: bio_text
+        label: First-person bio
+        type: text
+      - name: profile_image
+        label: Profile photograph
+        type: image
+      - name: instagram
+        label: Instagram profile URL
+        type: string
+      - name: spotify
+        label: Spotify artist URL
+        type: string
+      - name: substack
+        label: Substack publication URL
+        type: string
