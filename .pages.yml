@@ -1,0 +1,53 @@
+media:
+  input: public/images
+  output: /images
+
+content:
+  - name: work
+    label: My work
+    type: collection
+    path: src/content/work
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: title
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: category
+        label: Section
+        type: select
+        required: true
+        options:
+          values:
+            - words
+            - sounds
+            - stories
+            - moments
+      - name: date
+        label: Date
+        type: date
+      - name: excerpt
+        label: Short introduction
+        type: text
+      - name: cover
+        label: Cover image
+        type: image
+      - name: featured
+        label: Show in portfolio
+        type: boolean
+      - name: status
+        label: Publishing status
+        type: select
+        required: true
+        options:
+          values:
+            - draft
+            - published
+      - name: body
+        label: Full content
+        type: rich-text
