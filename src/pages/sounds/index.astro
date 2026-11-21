@@ -1,13 +1,23 @@
 ---
 import SiteLayout from "../../layouts/SiteLayout.astro";
 const entries = Object.entries(import.meta.glob("../../content/work/*.md", { eager: true }))
-  .map(([path, mod]) => ({ slug: path.split("/").pop().replace(/\.md$/, ""), ...mod.frontmatter }))
+  .map(([path, mod]) => ({ slug: path.split("/").pop().replace(/\\.md$/, ""), ...mod.frontmatter }))
   .filter((item) => item.category === "sounds" && item.status !== "draft")
   .sort((a,b) => String(b.date || "").localeCompare(String(a.date || "")));
 ---
-<SiteLayout title="Sounds, ScribbledToday" description="Handpan, music, sound baths and shared listening experiences.">
-  <main><div class="page-hero"><div class="eyebrow">02 / Listen</div><h1>Some things are better <em>felt.</em></h1><p>A space for handpan, music, Poetry with Pan and sound journeys, melodies and moments that invite us to pause and listen.</p></div>
+<SiteLayout title="Sounds, ScribbledToday" description="Singing, handpan, music, sound baths and shared listening experiences.">
+  <main><div class="page-hero"><div class="eyebrow">02 / Listen</div><h1>Some things are better <em>felt.</em></h1><p>A space for singing, handpan, music, Poetry with Pan and sound journeys. Melodies and moments that invite us to pause and listen.</p></div>
   <section class="section"><div class="eyebrow">Music & sound journeys</div><h2 class="section-title">From the sound space</h2>
-  {entries.length ? <div class="card-grid">{entries.map((entry) => <a class="work-card" href={`/work/${entry.slug}/`}><div class="card-meta"><span>{entry.date || "Sound"}</span><span>↗</span></div><div><h2>{entry.title}</h2><p>{entry.excerpt || "A sound experience from ScribbledToday."}</p></div></a>)}</div> : <div class="empty-note">The next melody is waiting to be added. Performances, handpan explorations and sound sessions will appear here.</div>}</section>
-  <section class="section"><div class="split"><div><div class="eyebrow">A note on sessions</div><h2 class="section-title">Make room to listen.</h2><p class="muted">For organisers interested in a handpan performance, a sound bath or a group experience, visit the collaboration page to start a conversation.</p><a class="btn primary" href="/work-with-me/">Enquire about a session</a></div><div class="feature-panel"><strong>A moment to pause.<br/><em>A space to hear.</em></strong></div></div></section></main>
+  <div class="sound-gallery">
+    <figure class="sound-photo sound-photo-wide"><img src="/images/IMG_1954.jpg" alt="Performing with handpan and microphone at the VIVAAN Handpan and World Music Festival" loading="lazy"/><figcaption>Handpan, voice and a moment on stage</figcaption></figure>
+    <figure class="sound-photo"><img src="/images/03b3ca75-c94b-4666-bf2e-a137d31b4f51.JPG" alt="Singing into a microphone during a live performance" loading="lazy"/><figcaption>Finding a voice in music</figcaption></figure>
+    <figure class="sound-photo"><img src="/images/IMG_5593.jpg" alt="Handpan and sound instruments arranged for a sound session" loading="lazy"/><figcaption>Making space for sound</figcaption></figure>
+    <figure class="sound-photo"><img src="/images/374db88b-19d8-434a-8a0c-730a266e3880.JPG" alt="Playing handpan during a live music performance" loading="lazy"/><figcaption>Handpan explorations</figcaption></figure>
+  </div>
+  {entries.length ? <div class="card-grid">{entries.map((entry) => <a class="work-card" href={`/work/${entry.slug}/`}><div class="card-meta"><span>{entry.date || "Sound"}</span><span>↗</span></div><div><h2>{entry.title}</h2><p>{entry.excerpt || "A sound experience from ScribbledToday."}</p></div></a>)}</div> : <div class="empty-note">The next melody is waiting to be added. Singing, performances, handpan explorations and sound sessions will appear here.</div>}</section>
+  <section class="section"><div class="split"><div><div class="eyebrow">A note on sessions</div><h2 class="section-title">Make room to listen.</h2><p class="muted">For organisers interested in a singing or handpan performance, a sound bath or a group experience, visit the collaboration page to start a conversation.</p><a class="btn primary" href="/work-with-me/">Enquire about a session</a></div><div class="feature-panel"><strong>A moment to pause.<br/><em>A space to hear.</em></strong></div></div></section></main>
 </SiteLayout>
+<style>
+.sound-gallery{display:grid;grid-template-columns:1.35fr 1fr 1fr;grid-template-rows:230px 230px;gap:14px;margin:28px 0 34px}.sound-photo{margin:0;position:relative;overflow:hidden;background:#222;border:1px solid var(--line);min-height:0}.sound-photo-wide{grid-row:span 2}.sound-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}.sound-photo:hover img{transform:scale(1.035)}.sound-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:35px 16px 14px;color:#fff;font-size:11px;letter-spacing:.04em;background:linear-gradient(transparent,rgba(0,0,0,.75))}
+@media(max-width:700px){.sound-gallery{grid-template-columns:1fr 1fr;grid-template-rows:220px 180px 180px}.sound-photo-wide{grid-column:span 2;grid-row:auto}}
+</style>
