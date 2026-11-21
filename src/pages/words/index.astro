@@ -5,8 +5,8 @@ const entries = Object.entries(import.meta.glob("../../content/work/*.md", { eag
   .filter((item) => item.category === "words" && item.status !== "draft")
   .sort((a,b) => String(b.date || "").localeCompare(String(a.date || "")));
 ---
-<SiteLayout title="Words — ScribbledToday" description="Poetry, essays and reflections in Hindi and English.">
-  <main><div class="page-hero"><div class="eyebrow">01 / Write</div><h1>Words that find their way <em>out.</em></h1><p>Poetry, essays, reflections and little fragments of thought — in Hindi, in English, and sometimes somewhere in between.</p></div>
+<SiteLayout title="Words, ScribbledToday" description="Poetry, essays and reflections in Hindi and English.">
+  <main><div class="page-hero"><div class="eyebrow">01 / Write</div><h1>Words that find their way <em>out.</em></h1><p>Poetry, essays, reflections and little fragments of thought, in Hindi, in English, and sometimes somewhere in between.</p></div>
   <section class="section"><div class="eyebrow">The writing desk</div><h2 class="section-title">Published words</h2>
   {entries.length ? <div class="card-grid">{entries.map((entry) => <a class="work-card" href={`/work/${entry.slug}/`}><div class="card-meta"><span>{entry.date || "Writing"}</span><span>↗</span></div><div><h2>{entry.title}</h2><p>{entry.excerpt || "A piece from the ScribbledToday notebook."}</p></div></a>)}</div> : <div class="empty-note">The writing desk is open. New poems and essays will find their place here soon.</div>}</section>
   <section class="section"><p class="muted">You can also find longer reflections on <a href="https://scribbledtoday.substack.com/" target="_blank" rel="noreferrer">Substack ↗</a>.</p></section></main>
