@@ -1,8 +1,9 @@
 ---
+import site from "../data/site.json";
 const { title = "ScribbledToday", description = "A creative space and artist portfolio for words, sounds, stories and moments." } = Astro.props;
-const instagram = "https://www.instagram.com/scribbledtoday/";
-const spotify = "https://open.spotify.com/artist/2sVzgMo3fdQtfZr5mEe3z4";
-const substack = "https://scribbledtoday.substack.com/";
+const instagram = site.instagram;
+const spotify = site.spotify;
+const substack = site.substack;
 ---
 <!doctype html>
 <html lang="en">
@@ -35,14 +36,14 @@ const substack = "https://scribbledtoday.substack.com/";
     <header class="site-header">
       <a class="brand" href="/" aria-label="ScribbledToday home">
         <img class="brand-mark" src="/brand-mark.svg" alt="" width="48" height="48" />
-        <span class="brand-type"><span class="brand-name">Scribbled<span>Today</span></span><span class="brand-tagline">Words · Sounds · Stories · Beyond</span></span>
+        <span class="brand-type"><span class="brand-name">Scribbled<span>Today</span></span><span class="brand-tagline">{site.tagline}</span></span>
       </a>
       <nav aria-label="Main navigation">
         <a href="/words/">Words</a><a href="/sounds/">Sounds</a><a href="/stories/">Stories</a><a href="/moments/">Moments</a><a href="/portfolio/">Portfolio</a><a href="/work-with-me/">Work with me</a>
       </nav>
     </header>
     <slot />
-    <footer><span>© {new Date().getFullYear()} ScribbledToday</span><span>Words · Sounds · Stories · Beyond</span><span class="footer-links"><a href={instagram} target="_blank" rel="noreferrer">Instagram ↗</a><a href={spotify} target="_blank" rel="noreferrer">Spotify ↗</a><a href={substack} target="_blank" rel="noreferrer">Substack ↗</a></span></footer>
+    <footer><span>© {new Date().getFullYear()} ScribbledToday</span><span>{site.tagline}</span><span class="footer-links"><a href={instagram} target="_blank" rel="noreferrer">Instagram ↗</a><a href={spotify} target="_blank" rel="noreferrer">Spotify ↗</a><a href={substack} target="_blank" rel="noreferrer">Substack ↗</a></span></footer>
   </div>
 </body>
 </html>
