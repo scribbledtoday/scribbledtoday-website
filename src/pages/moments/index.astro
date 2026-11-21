@@ -5,8 +5,8 @@ const entries = Object.entries(import.meta.glob("../../content/work/*.md", { eag
   .filter((item) => item.category === "moments" && item.status !== "draft")
   .sort((a,b) => String(b.date || "").localeCompare(String(a.date || "")));
 ---
-<SiteLayout title="Moments — ScribbledToday" description="Photographs, experiences, travels and observations.">
-  <main><div class="page-hero"><div class="eyebrow">04 / Notice</div><h1>Little things that <em>stay.</em></h1><p>Photographs, travels, encounters and observations — small fragments of life that stayed a little longer.</p></div>
+<SiteLayout title="Moments, ScribbledToday" description="Photographs, experiences, travels and observations.">
+  <main><div class="page-hero"><div class="eyebrow">04 / Notice</div><h1>Little things that <em>stay.</em></h1><p>Photographs, travels, encounters and observations, small fragments of life that stayed a little longer.</p></div>
   <section class="section"><div class="eyebrow">Collected along the way</div><h2 class="section-title">Moments</h2>
   {entries.length ? <div class="card-grid">{entries.map((entry) => <a class="work-card" href={`/work/${entry.slug}/`}><div class="card-meta"><span>{entry.date || "Moment"}</span><span>↗</span></div><div><h2>{entry.title}</h2><p>{entry.excerpt || "A moment from ScribbledToday."}</p></div></a>)}</div> : <div class="empty-note">This space will gather selected photographs and moments from the creative journey.</div>}</section></main>
 </SiteLayout>
