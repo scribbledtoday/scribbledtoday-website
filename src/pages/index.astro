@@ -1,6 +1,8 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
 const instagram = "https://www.instagram.com/scribbledtoday/";
+const spotify = "https://open.spotify.com/artist/2sVzgMo3fdQtfZr5mEe3z4";
+const substack = "https://scribbledtoday.substack.com/";
 ---
 <SiteLayout title="ScribbledToday — Words, Sounds & Stories" description="A creative personal space and artist portfolio for poetry, writing, handpan, performances, storytelling and collaborations.">
   <main>
@@ -35,7 +37,7 @@ const instagram = "https://www.instagram.com/scribbledtoday/";
         <div class="enquiry-points"><div><span>01 / CREATE</span>Commissioned writing & creative projects</div><div><span>02 / PERFORM</span>Poetry, handpan & performance opportunities</div><div><span>03 / FACILITATE</span>Sound experiences & group sessions</div><div><span>04 / COLLABORATE</span>Events, festivals & creative partnerships</div></div>
       </div>
     </section>
-    <section class="home-bottom"><div><div class="eyebrow">Stay connected</div><h2>Follow the thread.</h2><p>New work, small discoveries and moments from the creative process.</p></div><div class="bottom-links"><a href={instagram} target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://open.spotify.com/" target="_blank" rel="noreferrer">Spotify ↗</a><a href="https://scribbledtoday.substack.com/" target="_blank" rel="noreferrer">Substack ↗</a></div></section>
+    <section class="home-bottom"><div><div class="eyebrow">Stay connected</div><h2>Follow the thread.</h2><p>New work, small discoveries and moments from the creative process.</p></div><div class="bottom-links"><a href={instagram} target="_blank" rel="noreferrer">Instagram ↗</a><a href={spotify} target="_blank" rel="noreferrer">Spotify ↗</a><a href={substack} target="_blank" rel="noreferrer">Substack ↗</a></div></section>
   </main>
 </SiteLayout>
 <style>
