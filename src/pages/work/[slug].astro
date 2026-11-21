@@ -16,6 +16,6 @@ const { Content } = await entry.render();
 const data = entry.frontmatter;
 const backHref = data.category === "words" ? "/words/" : data.category === "sounds" ? "/sounds/" : data.category === "stories" ? "/stories/" : "/moments/";
 ---
-<SiteLayout title={`${data.title} — ScribbledToday`} description={data.excerpt || "A piece from ScribbledToday."}>
+<SiteLayout title={`${data.title}, ScribbledToday`} description={data.excerpt || "A piece from ScribbledToday."}>
   <main class="article"><a class="muted" href={backHref}>← Back to {data.category || "work"}</a><div class="eyebrow" style="margin-top:30px">{data.category || "ScribbledToday"} {data.date ? `· ${data.date}` : ""}</div><h1>{data.title}</h1>{data.excerpt && <p class="lead">{data.excerpt}</p>}<div class="article-body"><Content /></div></main>
 </SiteLayout>
