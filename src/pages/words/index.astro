@@ -7,7 +7,7 @@ const entries = Object.entries(import.meta.glob("../../content/work/*.md", { eag
 ---
 <SiteLayout title="Words, ScribbledToday" description="Hindi poetry, reflections, essays and scribbles.">
   <main>
-    <div class="page-hero"><div class="eyebrow">01 / Write</div><h1>Some thoughts find their way into words. Others become <em>poetry.</em></h1><p>Somewhere between a passing thought and a feeling that refuses to leave, a few words begin to take shape.</p></div>
+    <div class="page-hero"><h1>Some thoughts find their way into words. Others become <em>poetry.</em></h1><p>Somewhere between a passing thought and a feeling that refuses to leave, a few words begin to take shape.</p></div>
     <section class="section words-intro">
       <p>That's often how writing happens for me.</p>
       <p>I don't always sit down with an idea or a story to tell. Sometimes it's a moment, a conversation, a memory or a question that stays a little longer than expected. Sometimes it's something I've felt but couldn't quite say aloud.</p>
@@ -25,10 +25,10 @@ const entries = Object.entries(import.meta.glob("../../content/work/*.md", { eag
     </section>
     <section class="section"><div class="eyebrow">The writing desk</div><h2 class="section-title">Published words</h2>
       {entries.length ? <div class="card-grid">{entries.map((entry) => <a class="work-card" href={`/work/${entry.slug}/`}><div class="card-meta"><span>{entry.date || "Writing"}</span><span>↗</span></div><div><h2>{entry.title}</h2><p>{entry.excerpt || "A piece from the ScribbledToday notebook."}</p></div></a>)}</div> : <div class="empty-note">The writing desk is open. New poems and essays will find their place here soon.</div>}
-      <p class="muted">You can also find longer reflections on <a href="https://scribbledtoday.substack.com/" target="_blank" rel="noreferrer">Substack ↗</a>.</p>
+      <p class="muted">You can also find more of my writing, reflections and everyday scribbles on <a href="https://www.instagram.com/scribbledtoday/?utm_source=chatgpt.com" target="_blank" rel="noreferrer">Instagram ↗</a> and on <a href="https://scribbledtoday.substack.com/?utm_source=chatgpt.com" target="_blank" rel="noreferrer">Substack ↗</a>.</p>
     </section>
   </main>
 </SiteLayout>
 <style>
-.words-intro{max-width:790px;margin:0 auto}.words-intro>p{font-size:16px;line-height:1.95;color:var(--muted);margin:0 0 18px}.words-intro .section-title{margin-top:48px}.word-types{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.word-types article{padding:22px;border:1px solid var(--line);background:var(--panel)}.word-types h3{font:500 27px 'Cormorant Garamond',serif;margin:0 0 8px}.word-types p{font-size:13px;color:var(--muted);margin:0;line-height:1.7}@media(max-width:700px){.word-types{grid-template-columns:1fr}}
+.words-intro{max-width:790px;margin:0;text-align:left}.words-intro>p{font-size:16px;line-height:1.95;color:var(--muted);margin:0 0 18px}.words-intro .section-title{margin-top:48px}.word-types{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.word-types article{padding:22px;border:1px solid var(--line);background:var(--panel)}.word-types h3{font:500 27px 'Cormorant Garamond',serif;margin:0 0 8px}.word-types p{font-size:13px;color:var(--muted);margin:0;line-height:1.7}@media(max-width:700px){.word-types{grid-template-columns:1fr}}
 </style>
