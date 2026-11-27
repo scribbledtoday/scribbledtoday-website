@@ -4,6 +4,7 @@ const { title = "ScribbledToday", description = "A creative space and artist por
 const instagram = site.instagram;
 const spotify = site.spotify;
 const substack = site.substack;
+const email = site.email;
 ---
 <!doctype html>
 <html lang="en">
@@ -39,11 +40,11 @@ const substack = site.substack;
         <span class="brand-type"><span class="brand-name">Scribbled<span>Today</span></span><span class="brand-tagline">{site.tagline}</span></span>
       </a>
       <nav aria-label="Main navigation">
-        <a href="/words/">Words</a><a href="/sounds/">Sounds</a><a href="/stories/">Stories</a><a href="/portfolio/">Portfolio</a><a href="/work-with-me/">Work with me</a>
+        <a href="/">Home</a><a href="/words/">Words</a><a href="/sounds/">Sounds</a><a href="/stories/">Stories</a><a href="/work-with-me/">Work With Me</a>
       </nav>
     </header>
     <slot />
-    <footer><span>© {new Date().getFullYear()} ScribbledToday</span><span>{site.tagline}</span><span class="footer-links"><a href={instagram} target="_blank" rel="noreferrer">Instagram ↗</a><a href={spotify} target="_blank" rel="noreferrer">Spotify ↗</a><a href={substack} target="_blank" rel="noreferrer">Substack ↗</a></span></footer>
+    <footer><span>© {new Date().getFullYear()} ScribbledToday</span><span>{site.tagline}</span><span class="footer-links"><a href={instagram} target="_blank" rel="noreferrer">Instagram ↗</a><a href={spotify} target="_blank" rel="noreferrer">Spotify ↗</a><a href={substack} target="_blank" rel="noreferrer">Substack ↗</a><a href={`mailto:${email}`}>{email}</a></span></footer>
   </div>
 </body>
 </html>
