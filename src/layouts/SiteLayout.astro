@@ -1,6 +1,6 @@
 ---
 import site from "../data/site.json";
-const { title = "ScribbledToday", description = "A creative space and artist portfolio for words, sounds, stories and moments." } = Astro.props;
+const { title = "ScribbledToday", description = "A creative space and artist portfolio for words, sounds and stories." } = Astro.props;
 const instagram = site.instagram;
 const spotify = site.spotify;
 const substack = site.substack;
@@ -39,7 +39,7 @@ const substack = site.substack;
         <span class="brand-type"><span class="brand-name">Scribbled<span>Today</span></span><span class="brand-tagline">{site.tagline}</span></span>
       </a>
       <nav aria-label="Main navigation">
-        <a href="/words/">Words</a><a href="/sounds/">Sounds</a><a href="/stories/">Stories</a><a href="/moments/">Moments</a><a href="/portfolio/">Portfolio</a><a href="/work-with-me/">Work with me</a>
+        <a href="/words/">Words</a><a href="/sounds/">Sounds</a><a href="/stories/">Stories</a><a href="/portfolio/">Portfolio</a><a href="/work-with-me/">Work with me</a>
       </nav>
     </header>
     <slot />
