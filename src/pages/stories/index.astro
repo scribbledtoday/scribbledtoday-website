@@ -1,17 +1,26 @@
 ---
 import SiteLayout from "../../layouts/SiteLayout.astro";
 const entries = Object.entries(import.meta.glob("../../content/work/*.md", { eager: true }))
-  .map(([path, mod]) => ({ slug: path.split("/").pop().replace(/\\.md$/, ""), ...mod.frontmatter }))
+  .map(([path, mod]) => ({ slug: path.split("/").pop().replace(/\.md$/, ""), ...mod.frontmatter }))
   .filter((item) => item.category === "stories" && item.status !== "draft")
   .sort((a,b) => String(b.date || "").localeCompare(String(a.date || "")));
 ---
-<SiteLayout title="Stories, ScribbledToday" description="Theatre, acting, storytelling and live experiences.">
-  <main><div class="page-hero"><div class="eyebrow">03 / Perform</div><h1>Stories deserve to be <em>lived.</em></h1><p>Theatre, acting, storytelling and shared experiences, the many ways a story can step out of the page and into a room.</p></div>
-  <section class="section"><div class="eyebrow">On stage & beyond</div><h2 class="section-title">Stories and experiences</h2>
-  <div class="story-feature"><img src="/images/bac7eeee-5d78-4440-b0cd-91ed2019fbed.jpg" alt="Standing at a microphone on a small stage under a spotlight" loading="lazy"/><div><span class="eyebrow">A moment under the spotlight</span><h2>Every stage has a story.</h2><p class="muted">From live performance to storytelling, from a character to a room full of listeners, I enjoy exploring the many ways stories come alive.</p></div></div>
-  {entries.length ? <div class="card-grid">{entries.map((entry) => <a class="work-card" href={`/work/${entry.slug}/`}><div class="card-meta"><span>{entry.date || "Story"}</span><span>↗</span></div><div><h2>{entry.title}</h2><p>{entry.excerpt || "A story from ScribbledToday."}</p></div></a>)}</div> : <div class="empty-note">Stage moments, storytelling sessions and theatre experiences will be collected here.</div>}</section></main>
+<SiteLayout title="Stories, ScribbledToday" description="Acting, theatre, storytelling, playwriting and scripts.">
+  <main>
+    <div class="page-hero"><div class="eyebrow">03 / Perform</div><h1>Where Stories Come <em>Alive</em></h1><p>I've always been fascinated by stories, not just the ones we read or hear, but the ones we experience.</p></div>
+    <section class="section stories-intro">
+      <p>A character, a situation, a moment of silence or a line delivered at just the right time can make us feel something unexpected. That's what draws me towards acting and theatre.</p>
+      <p>For me, acting is an opportunity to step into someone else's world, explore emotions, understand different perspectives and bring a character to life. Every role has something to discover, and every story offers a new way of looking at people and the world around us.</p>
+      <div class="story-feature"><img src="/images/bac7eeee-5d78-4440-b0cd-91ed2019fbed.jpg" alt="A live stage performance" loading="lazy"/><div><div class="eyebrow">01 / Become someone else</div><h2>Acting</h2><p>Exploring characters, emotions and perspectives, and discovering what each role reveals about people and the world around us.</p></div></div>
+      <div class="story-feature"><img src="/images/6BBDF3A1-EED7-472C-B699-252D4D9A9967.JPG" alt="A quiet performance moment with a microphone" loading="lazy"/><div><div class="eyebrow">02 / In the moment</div><h2>Theatre & Plays</h2><p>Theatre adds another dimension to this experience. There's something special about being part of a live performance, where every moment unfolds in front of an audience and nothing quite happens the same way twice. I enjoy being part of plays and theatrical experiences, and collaborating with others to bring stories to the stage.</p></div></div>
+      <div class="story-feature"><img src="/images/IMG_1962.jpg" alt="A creative performance with handpan and voice" loading="lazy"/><div><div class="eyebrow">03 / Share a story</div><h2>Storytelling</h2><p>Sometimes through a character, sometimes through a performance, and sometimes simply through the way a moment is shared. Storytelling brings together voice, expression and presence to make a story feel alive.</p></div></div>
+      <div class="story-feature"><img src="/images/03b3ca75-c94b-4666-bf2e-a137d31b4f51.JPG" alt="A live creative performance" loading="lazy"/><div><div class="eyebrow">04 / On the page</div><h2>Playwriting & Scripts</h2><p>I'm also drawn to the process of creating stories for the stage: imagining characters, shaping situations, developing plots and finding the dialogue that brings a scene to life. It's another way of exploring stories, this time from the page towards performance.</p></div></div>
+      <p class="stories-close">This space brings together my explorations in acting, theatre, plays, storytelling and writing for the stage. The roles I've stepped into, the stories I've been part of and the ideas that continue to shape my creative journey.</p>
+      <p class="stories-close">Because every story has another side waiting to be told, and sometimes, another life waiting to be lived.</p>
+    </section>
+    {entries.length ? <section class="section"><div class="eyebrow">More from the stage</div><h2 class="section-title">Stories & experiences</h2><div class="card-grid">{entries.map((entry) => <a class="work-card" href={`/work/${entry.slug}/`}><div class="card-meta"><span>{entry.date || "Story"}</span><span>↗</span></div><div><h2>{entry.title}</h2><p>{entry.excerpt || "A story from ScribbledToday."}</p></div></a>)}</div></section> : null}
+  </main>
 </SiteLayout>
 <style>
-.story-feature{display:grid;grid-template-columns:minmax(220px,.85fr) 1fr;gap:34px;align-items:center;margin:28px 0 36px;padding:18px;border:1px solid var(--line);background:rgba(35,34,29,.55)}.story-feature img{width:100%;max-height:390px;object-fit:cover;object-position:center 38%;display:block}.story-feature h2{font:500 clamp(34px,4vw,50px)/1 'Cormorant Garamond',serif;margin:12px 0}.story-feature p{line-height:1.8;max-width:460px}
-@media(max-width:700px){.story-feature{grid-template-columns:1fr;gap:20px}}
+.stories-intro{max-width:900px;margin:auto}.stories-intro>p{font-size:16px;line-height:1.9;color:var(--muted);max-width:790px}.story-feature{display:grid;grid-template-columns:minmax(220px,.85fr) 1fr;gap:34px;align-items:center;margin:34px 0;padding:18px;border:1px solid var(--line);background:rgba(35,34,29,.55)}.story-feature img{width:100%;height:300px;object-fit:cover;object-position:center 38%;display:block}.story-feature h2{font:500 clamp(34px,4vw,48px)/1 'Cormorant Garamond',serif;margin:12px 0}.story-feature p{line-height:1.8;color:var(--muted);font-size:14px;max-width:460px}.stories-close{font:400 24px 'Caveat',cursive;color:var(--accent)!important;margin-top:26px}@media(max-width:700px){.story-feature{grid-template-columns:1fr;gap:20px}.story-feature img{height:250px}}
 </style>

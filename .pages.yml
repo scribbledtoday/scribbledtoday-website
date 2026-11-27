@@ -36,9 +36,6 @@ content:
       - name: cover
         label: Cover image
         type: image
-      - name: featured
-        label: Show in portfolio
-        type: boolean
       - name: status
         label: Publishing status
         type: select
@@ -78,6 +75,9 @@ content:
       - name: profile_image
         label: Profile photograph
         type: image
+      - name: email
+        label: Public contact email
+        type: string
       - name: instagram
         label: Instagram profile URL
         type: string
