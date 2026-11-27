@@ -27,7 +27,6 @@ content:
             - words
             - sounds
             - stories
-            - moments
       - name: date
         label: Date
         type: date
