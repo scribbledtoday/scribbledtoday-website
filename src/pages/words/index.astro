@@ -1,7 +1,7 @@
 ---
 import SiteLayout from "../../layouts/SiteLayout.astro";
 const entries = Object.entries(import.meta.glob("../../content/work/*.md", { eager: true }))
-  .map(([path, mod]) => ({ slug: path.split("/").pop().replace(/\\.md$/, ""), ...mod.frontmatter }))
+  .map(([path, mod]) => ({ slug: path.split("/").pop().replace(/\.md$/, ""), ...mod.frontmatter }))
   .filter((item) => item.category === "words" && item.status !== "draft")
   .sort((a,b) => String(b.date || "").localeCompare(String(a.date || "")));
 ---
