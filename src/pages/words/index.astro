@@ -1,13 +1,34 @@
 ---
 import SiteLayout from "../../layouts/SiteLayout.astro";
 const entries = Object.entries(import.meta.glob("../../content/work/*.md", { eager: true }))
-  .map(([path, mod]) => ({ slug: path.split("/").pop().replace(/\.md$/, ""), ...mod.frontmatter }))
+  .map(([path, mod]) => ({ slug: path.split("/").pop().replace(/\\.md$/, ""), ...mod.frontmatter }))
   .filter((item) => item.category === "words" && item.status !== "draft")
   .sort((a,b) => String(b.date || "").localeCompare(String(a.date || "")));
 ---
-<SiteLayout title="Words, ScribbledToday" description="Poetry, essays and reflections in Hindi and English.">
-  <main><div class="page-hero"><div class="eyebrow">01 / Write</div><h1>Words that find their way <em>out.</em></h1><p>Poetry, essays, reflections and little fragments of thought, in Hindi, in English, and sometimes somewhere in between.</p></div>
-  <section class="section"><div class="eyebrow">The writing desk</div><h2 class="section-title">Published words</h2>
-  {entries.length ? <div class="card-grid">{entries.map((entry) => <a class="work-card" href={`/work/${entry.slug}/`}><div class="card-meta"><span>{entry.date || "Writing"}</span><span>↗</span></div><div><h2>{entry.title}</h2><p>{entry.excerpt || "A piece from the ScribbledToday notebook."}</p></div></a>)}</div> : <div class="empty-note">The writing desk is open. New poems and essays will find their place here soon.</div>}</section>
-  <section class="section"><p class="muted">You can also find longer reflections on <a href="https://scribbledtoday.substack.com/" target="_blank" rel="noreferrer">Substack ↗</a>.</p></section></main>
+<SiteLayout title="Words, ScribbledToday" description="Hindi poetry, reflections, essays and scribbles.">
+  <main>
+    <div class="page-hero"><div class="eyebrow">01 / Write</div><h1>Some thoughts find their way into words. Others become <em>poetry.</em></h1><p>Somewhere between a passing thought and a feeling that refuses to leave, a few words begin to take shape.</p></div>
+    <section class="section words-intro">
+      <p>That's often how writing happens for me.</p>
+      <p>I don't always sit down with an idea or a story to tell. Sometimes it's a moment, a conversation, a memory or a question that stays a little longer than expected. Sometimes it's something I've felt but couldn't quite say aloud.</p>
+      <p>And then, somewhere along the way, it becomes a poem. Or a reflection. Or a few lines that may not be perfect, but feel honest.</p>
+      <p>Hindi is where much of this expression comes naturally to me. There's a certain warmth, rhythm and familiarity in the language that I find difficult to recreate elsewhere. Most of my poetry finds its home there, while my essays and reflections wander wherever the thought takes them.</p>
+      <p>This space brings together those words. About love and life, people and relationships, dreams and disappointments, and all the little things that make us pause.</p>
+      <p>Not every piece comes with a conclusion. Some are simply conversations with myself. Others might become conversations with you.</p>
+      <p>If a line here makes you stop for a moment, smile, remember someone or see something differently, perhaps the words have found their purpose.</p>
+      <h2 class="section-title">What you'll find here</h2>
+      <div class="word-types">
+        <article><h3>Poetry</h3><p>Hindi verses, emotions in fragments and feelings finding their rhythm.</p></article>
+        <article><h3>Reflections</h3><p>Thoughts on relationships, everyday life, people and the things we often leave unsaid.</p></article>
+        <article><h3>Essays & Scribbles</h3><p>Longer conversations with ideas, experiences and questions worth exploring.</p></article>
+      </div>
+    </section>
+    <section class="section"><div class="eyebrow">The writing desk</div><h2 class="section-title">Published words</h2>
+      {entries.length ? <div class="card-grid">{entries.map((entry) => <a class="work-card" href={`/work/${entry.slug}/`}><div class="card-meta"><span>{entry.date || "Writing"}</span><span>↗</span></div><div><h2>{entry.title}</h2><p>{entry.excerpt || "A piece from the ScribbledToday notebook."}</p></div></a>)}</div> : <div class="empty-note">The writing desk is open. New poems and essays will find their place here soon.</div>}
+      <p class="muted">You can also find longer reflections on <a href="https://scribbledtoday.substack.com/" target="_blank" rel="noreferrer">Substack ↗</a>.</p>
+    </section>
+  </main>
 </SiteLayout>
+<style>
+.words-intro{max-width:790px;margin:0 auto}.words-intro>p{font-size:16px;line-height:1.95;color:var(--muted);margin:0 0 18px}.words-intro .section-title{margin-top:48px}.word-types{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.word-types article{padding:22px;border:1px solid var(--line);background:var(--panel)}.word-types h3{font:500 27px 'Cormorant Garamond',serif;margin:0 0 8px}.word-types p{font-size:13px;color:var(--muted);margin:0;line-height:1.7}@media(max-width:700px){.word-types{grid-template-columns:1fr}}
+</style>
