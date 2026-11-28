@@ -16,6 +16,10 @@ const entries = Object.entries(import.meta.glob("../../content/work/*.md", { eag
       <p>This space brings together those words. About love and life, people and relationships, dreams and disappointments, and all the little things that make us pause.</p>
       <p>Not every piece comes with a conclusion. Some are simply conversations with myself. Others might become conversations with you.</p>
       <p>If a line here makes you stop for a moment, smile, remember someone or see something differently, perhaps the words have found their purpose.</p>
+      <div class="words-gallery" aria-label="Writing and poetry photographs">
+        <figure><img src="/images/IMG_8232.HEIC" alt="A personal moment from the world of ScribbledToday" loading="lazy" /></figure>
+        <figure><img src="/images/IMG_6030.jpg" alt="A personal moment from the world of ScribbledToday" loading="lazy" /></figure>
+      </div>
       <h2 class="section-title">What you'll find here</h2>
       <div class="word-types">
         <article><h3>Poetry</h3><p>Hindi verses, emotions in fragments and feelings finding their rhythm.</p></article>
@@ -30,5 +34,5 @@ const entries = Object.entries(import.meta.glob("../../content/work/*.md", { eag
   </main>
 </SiteLayout>
 <style>
-.words-intro{max-width:790px;margin:0;text-align:left}.words-intro>p{font-size:16px;line-height:1.95;color:var(--muted);margin:0 0 18px}.words-intro .section-title{margin-top:48px}.word-types{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.word-types article{padding:22px;border:1px solid var(--line);background:var(--panel)}.word-types h3{font:500 27px 'Cormorant Garamond',serif;margin:0 0 8px}.word-types p{font-size:13px;color:var(--muted);margin:0;line-height:1.7}@media(max-width:700px){.word-types{grid-template-columns:1fr}}
+.words-intro{max-width:790px;margin:0;text-align:left}.words-intro>p{font-size:16px;line-height:1.95;color:var(--muted);margin:0 0 18px}.words-gallery{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:42px 0 8px}.words-gallery figure{margin:0;overflow:hidden;border:1px solid var(--line);background:var(--panel);aspect-ratio:4/3}.words-gallery img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}.words-gallery figure:hover img{transform:scale(1.025)}.words-intro .section-title{margin-top:48px}.word-types{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.word-types article{padding:22px;border:1px solid var(--line);background:var(--panel)}.word-types h3{font:500 27px 'Cormorant Garamond',serif;margin:0 0 8px}.word-types p{font-size:13px;color:var(--muted);margin:0;line-height:1.7}@media(max-width:700px){.words-gallery{gap:10px;margin:30px 0 4px}.words-gallery figure{aspect-ratio:3/4}.word-types{grid-template-columns:1fr}}
 </style>
